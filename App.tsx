@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import Layout from "./components/Layout";
+import ScrollLoadingIndicator from "./components/ScrollLoadingIndicator";
 import Home from "./pages/Home";
 import Reports from "./pages/Reports";
 import ReportDetail from "./pages/ReportDetail";
+import Services from "./pages/Services";
 import About from "./pages/About";
 import Blogs from "./pages/Blogs";
+import BlogDetail from "./pages/BlogDetail";
 import PressReleases from "./pages/PressReleases";
 import Contact from "./pages/Contact";
 import Payment from "./pages/Payment";
@@ -29,8 +33,10 @@ const App: React.FC = () => {
           <Route index element={<Home />} />
           <Route path="reports" element={<Reports />} />
           <Route path="reports/:id" element={<ReportDetail />} />
+          <Route path="services" element={<Services />} />
           <Route path="about" element={<About />} />
           <Route path="blogs" element={<Blogs />} />
+          <Route path="blogs/:id" element={<BlogDetail />} />
           <Route path="press-releases" element={<PressReleases />} />
           <Route path="contact" element={<Contact />} />
           <Route path="payment" element={<Payment />} />
